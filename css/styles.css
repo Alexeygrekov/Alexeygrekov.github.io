@@ -11731,4 +11731,8 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+  .text-single-color {
+    color: #4b62c7; 
+}
+
 }
