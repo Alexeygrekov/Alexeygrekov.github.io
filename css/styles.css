@@ -11731,21 +11731,4 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
-  /* Add this change on 4:12pm 8/14 */
-  .header-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center; /* Center text horizontally */
-  }
-
-  @media (max-width: 767.98px) {
-    .header-text {
-        padding: 0 15px; /* Add some padding on small screens */
-    }
-}
-
-
 }
