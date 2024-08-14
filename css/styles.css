@@ -11731,4 +11731,10 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+  .header-text-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-left: 1rem;
+  }  
 }
