@@ -11731,27 +11731,4 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
-
-  /* This code is for logo "Ag" and text "alexey grekov" */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 10px; /* Adjust this value as needed to position the "ag" */
-    font-size: 24px;
-}
-
-.name {
-    margin-top: 40px; /* Adjust this value based on the height of "ag" to ensure alignment */
-    text-align: center;
-}
-
-
 }
