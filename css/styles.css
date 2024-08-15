@@ -11731,4 +11731,15 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+
+  /* Left alignment */
+    /* Custom CSS to align the text */
+      @media (max-width: 768px) {
+      .header-title {
+          margin-left: 0; /* Adjust margin as needed */
+      }
+      .header-subtitle {
+          margin-left: 0; /* Ensure the subtitle aligns with the title */
+      }
+  }
 }
