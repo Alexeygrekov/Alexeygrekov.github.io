@@ -11739,7 +11739,7 @@ html {
           margin-left: 0; /* Adjust margin as needed */
       }
       .header-subtitle {
-          margin-left: 0; /* Ensure the subtitle aligns with the title */
+          margin-left: -20px; /* Ensure the subtitle aligns with the title */
       }
   }
 }
