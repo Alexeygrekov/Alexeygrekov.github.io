@@ -11731,4 +11731,16 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+.text-container {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center items vertically */
+   
+    height: 100vh; /* Full viewport height */
+}
+
+.text-container h1, .text-container p {
+    margin: 0; /* Remove default margin */
+}
+  
 }
