@@ -11735,6 +11735,7 @@ html {
     display: flex;
     flex-direction: column; /* Arrange items vertically */
     justify-content: center; /* Center items vertically */
+    align-items: flex-start;
    
     height: 100vh; /* Full viewport height */
 }
