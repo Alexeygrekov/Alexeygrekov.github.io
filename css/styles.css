@@ -7401,7 +7401,7 @@ textarea.form-control-lg {
 }
 
 .align-items-center {
-  align-items: center !important;
+  align-items: center ;
 }
 
 .align-items-baseline {
@@ -7932,8 +7932,8 @@ textarea.form-control-lg {
 }
 
 .py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
 
 .pt-0 {
@@ -8005,7 +8005,7 @@ textarea.form-control-lg {
 }
 
 .pb-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 5rem !important;
 }
 
 .ps-0 {
