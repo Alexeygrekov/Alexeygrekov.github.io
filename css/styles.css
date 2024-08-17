@@ -11731,17 +11731,4 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
-  /* styles.css */
-.header {
-    position: relative;
-    height: 100vh; /* Ensure the container is full height */
-}
-
-.header-text {
-    position: absolute;
-    top: 50%; /* Center vertically */
-
-}
-
-  
 }
