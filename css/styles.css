@@ -11734,5 +11734,6 @@ html {
   .vertical-align-middle {
     display: flex;
     align-items: center;
+    height: 100%;
   }
 }
