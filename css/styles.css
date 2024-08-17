@@ -11732,6 +11732,7 @@ html {
     left: -2vw;
   }
   .vertical-align-middle {
-    vertical-align: middle
+    display: flex;
+    align-items: center;
   }
 }
