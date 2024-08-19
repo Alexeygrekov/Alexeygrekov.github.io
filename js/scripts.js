@@ -8,7 +8,7 @@ Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 // Let the CanvasSpace resize
 space.autoResize = true;
 // The number of points to create
-let num_points = 400;
+let num_points = 800;
 // The amount of padding the navbar takes
 let mobile_navbar_padding = 56;
 
