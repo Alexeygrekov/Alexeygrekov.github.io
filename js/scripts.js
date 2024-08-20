@@ -7,11 +7,12 @@ Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
 // Resize enabled
 space.autoResize = true;
-// Adjust points based on screen width
+// Adjust points based on screen width. For mobile we have less points
 let num_points = window.innerWidth > 768 ? 500 : 300; 
 // The amount of padding the navbar takes
 let mobile_navbar_padding = 10;
-
+// Calculate a scaling factor based on the screen width
+let scaleFactor = window.innerWidth > 768 ? 1 : 2; 
 
 // Self-executing function
 (() => {
@@ -42,7 +43,7 @@ let mobile_navbar_padding = 10;
         let lp = rotating_line(p);
         // Calculate the ratio between the distance from the point to the
         // rotating_line to the canvas width divided by 2.
-        let ratio = Math.min(1, 1 - lp.$subtract(p).magnitude() / (space.size.x / 2));
+        let ratio = Math.min(1, 1 - lp.$subtract(p).magnitude() / (space.size.x / (2 * scaleFactor)));
         // Color the lines perpendicular to the point and rotating_line
         form.stroke(`rgba(200,200,200,${ratio}`, ratio * 2).line([p, lp]);
         // Color the points on the canvas
