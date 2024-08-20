@@ -11741,6 +11741,8 @@ html {
     z-index: -1; /* Sends the canvas behind other content */
   }
   header {
+    flex: 1; /* Make the header take up the remaining space */
+    display: flex;
     position: relative;
     z-index: 1; /* Ensures text is above the animation */
 }
