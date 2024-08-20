@@ -11737,7 +11737,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 72px); /* 1 Rem =16px so py-5 is 1 rem each side then content is 40px */
+    height: calc(100vh - 72px); /* 1 Rem =16px so py-5 is 1 rem each side then content is 40px */
     z-index: -1; /* Sends the canvas behind other content */
   }
   header {
