@@ -1,6 +1,3 @@
-// Source code licensed under Apache License 2.0. 
-// Copyright © 2017 William Ngan. (https://github.com/williamngan/pts)
-// Code from: https://ptsjs.org/demo/edit/?name=line.perpendicularFromPt
 
 // Create the CanvasSpace and CanvasForm
 Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
@@ -12,7 +9,7 @@ let num_points = window.innerWidth > 768 ? 500 : 300;
 // The amount of padding the navbar takes
 let mobile_navbar_padding = 10;
 // Calculate a scaling factor based on the screen width
-let scaleFactor = window.innerWidth > 768 ? 1 : 2; 
+let scaleFactor = window.innerWidth > 768 ? 1 : 0.5; 
 
 // Self-executing function
 (() => {
