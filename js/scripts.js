@@ -7,8 +7,8 @@ Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
 // Resize enabled
 space.autoResize = true;
-// The number of points to create
-let num_points = 500;
+// Adjust points based on screen width
+let num_points = window.innerWidth > 768 ? 500 : 300; 
 // The amount of padding the navbar takes
 let mobile_navbar_padding = 10;
 
