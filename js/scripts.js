@@ -5,13 +5,15 @@
 // Create the CanvasSpace and CanvasForm
 Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
-// Let the CanvasSpace resize
+// Resize enabled
 space.autoResize = true;
 // The number of points to create
-let num_points = 800;
+let num_points = 500;
 // The amount of padding the navbar takes
-let mobile_navbar_padding = 56;
+let mobile_navbar_padding = 10;
 
+
+// Self-executing function
 (() => {
 
   let pts = new Group();
@@ -19,7 +21,6 @@ let mobile_navbar_padding = 56;
   let rotating_line = new Group();
 
   space.add({
-    // Initialize the canvas
     start: (bound) => {
       bound.width = window.innerWidth;
       bound.height = window.innerHeight - mobile_navbar_padding;
@@ -30,8 +31,9 @@ let mobile_navbar_padding = 56;
 
     // Animate the canvas via a loop
     animate: () => {
-      // Rotate the line and points on the canvas
+      // Rotate line
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
+      // Rotate Points
       pts.rotate2D(0.0004, space.center);
       rotating_point.rotate2D(-0.0006, space.center);
 
