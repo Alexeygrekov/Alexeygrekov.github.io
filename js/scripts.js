@@ -6,8 +6,8 @@ Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 space.autoResize = true;
 // Adjust points based on screen width. For mobile we have less points
 let num_points = window.innerWidth > 768 ? 500 : 300; 
-// The amount of padding the navbar takes
-let mobile_navbar_padding = 10;
+// The amount of padding the navbar takes mine is 72
+let mobile_navbar_padding = 72;
 // Calculate a scaling factor based on the screen width
 let scaleFactor = window.innerWidth > 768 ? 1 : 0.75; 
 
