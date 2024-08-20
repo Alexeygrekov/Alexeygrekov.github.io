@@ -11732,4 +11732,16 @@ html {
     width: 1.5vw;
     left: -2vw;
   }
+  #homepage-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 48px); /* 1 Rem =16px so 3 rem here */
+    z-index: -1; /* Sends the canvas behind other content */
+  }
+  header {
+    position: relative;
+    z-index: 1; /* Ensures text is above the animation */
+}
 }
