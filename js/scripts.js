@@ -24,7 +24,6 @@ let scaleFactor = window.innerWidth > 768 ? 1 : 0.75;
       bound.height = window.innerHeight - mobile_navbar_padding;
       // Resize will call the resize function below, drawing the points and
       // rotating line.
-      document.getElementById('homepage-animation').style.height = `${window.innerHeight - navbarHeight}px`;
       space.resize(bound)
     },
 
