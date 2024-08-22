@@ -21,7 +21,7 @@ let scaleFactor = window.innerWidth > 768 ? 1 : 0.75;
   space.add({
     start: (bound) => {
       bound.width = window.innerWidth;
-      bound.height = window.innerHeight - mobile_navbar_padding;
+      bound.height = window.innerHeight;
       // Resize will call the resize function below, drawing the points and
       // rotating line.
       document.getElementById('homepage-animation').style.height = `${window.innerHeight - mobile_navbar_padding}px`;
