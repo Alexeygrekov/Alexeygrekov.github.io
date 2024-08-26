@@ -61,22 +61,3 @@ let scaleFactor = window.innerWidth > 768 ? 1 : 0.75;
   // Start the animation
   space.play();
 })();
-
-function getScrollbarWidth() {
-  return window.innerWidth - document.documentElement.clientWidth;
-}
-
-function adjustNavbarForScrollbar() {
-  const scrollbarWidth = getScrollbarWidth();
-  const navbar = document.querySelector('.navbar');
-
-  if (window.location.hash === "" || window.location.hash === "#homepage") {
-      navbar.style.marginRight = `${scrollbarWidth}px`;
-  } else {
-      navbar.style.marginRight = `0px`;
-  }
-}
-
-// Run the function on page load and on hash change
-window.addEventListener('load', adjustNavbarForScrollbar);
-window.addEventListener('hashchange', adjustNavbarForScrollbar);
