@@ -11552,6 +11552,8 @@ textarea.form-control-lg {
 body,
 html {
   height: 100%;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .bg-gradient-primary-to-secondary {
@@ -11744,5 +11746,8 @@ html {
   header {
     position: relative;
     z-index: 1; /* Ensures text is above the animation */
+    height: calc(100vh - 72px);
+    overflow: hidden;
+    max-width: 100%;
 }
 }
