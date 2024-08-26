@@ -2,9 +2,6 @@
 // Create the CanvasSpace and CanvasForm
 Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
-// Ensure the animation canvas is behind the text
-document.getElementById("homepage-animation").style.zIndex = "0";
-
 // Resize enabled
 space.autoResize = true;
 // Adjust points based on screen width. For mobile we have less points
