@@ -11552,7 +11552,6 @@ textarea.form-control-lg {
 body,
 html {
   height: 100%;
-  overflow: hidden;
   max-width: 100%;
 }
 
@@ -11749,5 +11748,8 @@ html {
     height: calc(100vh - 72px);
     overflow: hidden;
     max-width: 100%;
+}
+body.homepage {
+	overflow: hidden;
 }
 }
