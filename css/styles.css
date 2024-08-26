@@ -3752,6 +3752,7 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+  transition: margin-right 0.3s ease;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -3764,7 +3765,6 @@ textarea.form-control-lg {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
-  transition: margin-right 0.3s ease;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
