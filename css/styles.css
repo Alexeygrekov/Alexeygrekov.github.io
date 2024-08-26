@@ -11748,10 +11748,8 @@ html {
     position: relative;
     z-index: 1; /* Ensures text is above the animation */
     height: calc(100vh - 72px);
-    overflow: hidden;
     max-width: 100%;
 }
 body.homepage {
-	overflow: hidden;
 }
 }
