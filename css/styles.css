@@ -11747,5 +11747,7 @@ html {
 }
   .homepage-text{
     z-index:1 
+    margin-top: 72px;
+    position: relative;
   }
 }
