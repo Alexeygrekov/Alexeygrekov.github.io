@@ -7301,7 +7301,7 @@ textarea.form-control-lg {
 }
 
 .h-100 {
-  height: calc(100vh - 72px);
+  height: 100%;
 }
 
 .h-auto {
@@ -11738,16 +11738,11 @@ html {
     left: 0;
     width: 100%;
     height: calc(100vh - 72px); /* 1 Rem =16px so py-5 is 1 rem each side then content is 40px. We get 32 + 40 = 72 for header*/
-    z-index: 0; /* Sends the canvas behind other content */
+    z-index: -1; /* Sends the canvas behind other content */
     display: block;
   }
   header {
     position: relative;
     z-index: 1; /* Ensures text is above the animation */
 }
-  .homepage-text{
-    z-index:1 
-    margin-top: 72px;
-    position: relative;
-  }
 }
