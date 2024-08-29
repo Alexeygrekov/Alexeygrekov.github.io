@@ -41,7 +41,7 @@ function erase() {
 }
 
 if (textArray.length) {
-    console.log("Starting typing effect...");
+    console.log(":) hi there");
     setTimeout(type, newTextDelay + 250);
   }
 });

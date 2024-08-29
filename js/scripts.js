@@ -1,6 +1,10 @@
 
 // Create the CanvasSpace and CanvasForm
-Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
+// Check if the element with id 'homepage-animation' exists before running Pts.js code
+if (document.getElementById('homepage-animation')) {
+  // Your existing Pts.js code goes here
+  Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
+}
 
 // Resize enabled
 space.autoResize = true;
