@@ -1,5 +1,11 @@
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
+document.addEventListener("DOMContentLoaded", function() {
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+  
+    if (!typedTextSpan || !cursorSpan) {
+      console.error("Typed text or cursor element not found.");
+      return;
+    }
 
 const textArray = ["Software Engineer"];
 const typingDelay = 200;
@@ -14,8 +20,7 @@ function type() {
     typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
     charIndex++;
     setTimeout(type, typingDelay);
-  } 
-  else {
+  } else {
     cursorSpan.classList.remove("typing");
   	setTimeout(erase, newTextDelay);
   }
@@ -27,8 +32,7 @@ function erase() {
     typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
     charIndex--;
     setTimeout(erase, erasingDelay);
-  } 
-  else {
+  } else {
     cursorSpan.classList.remove("typing");
     textArrayIndex++;
     if(textArrayIndex>=textArray.length) textArrayIndex=0;
@@ -36,6 +40,8 @@ function erase() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  if(textArray.length) setTimeout(type, newTextDelay + 250);
+if (textArray.length) {
+    console.log("Starting typing effect...");
+    setTimeout(type, newTextDelay + 250);
+  }
 });
