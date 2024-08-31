@@ -11551,7 +11551,7 @@ textarea.form-control-lg {
 body,
 html {
   height: 100%;
-  max-width: 100%;
+  width:100%;
   margin: 0;
   padding: 0;
 }
@@ -11775,4 +11775,9 @@ html {
   margin: 0;
   width: 100%;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 }

@@ -29,10 +29,6 @@ if (document.getElementById('homepage-animation')) {
       // Initialize points and rotating line once
       pts = Create.distributeRandom(space.outerBound, num_points);
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
-
-      // Additional precaution to ensure canvas doesn't exceed viewport
-      document.getElementById('homepage-animation').style.width = '100vw';
-      document.getElementById('homepage-animation').style.height = '100vh';
     },
   
     animate: () => {
