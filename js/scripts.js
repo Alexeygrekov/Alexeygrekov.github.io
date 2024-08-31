@@ -24,38 +24,42 @@ if (document.getElementById('homepage-animation')) {
     start: (bound) => {
       bound.width = window.innerWidth;
       bound.height = window.innerHeight - mobile_navbar_padding;
-      // Resize will call the resize function below, drawing the points and rotating line.
       space.resize(bound);
-    },
-
-    // Animate the canvas via a loop
-    animate: () => {
-      // Rotate line
+      
+      // Initialize points and rotating line once
+      pts = Create.distributeRandom(space.outerBound, num_points);
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
-      // Rotate Points
+    },
+  
+    animate: () => {
+      // Rotate points and rotating line only if necessary
+      rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
       pts.rotate2D(0.0004, space.center);
       rotating_point.rotate2D(-0.0006, space.center);
-
-      // For each point, find and fill a line perpendicular to rotating_line
+  
+      const fillColors = ["#F04", "#0F9", "#09F"];
+      const center = space.center;
+      const halfScreenWidth = space.size.x / (2 * scaleFactor);
+  
       pts.forEach((p, i) => {
         let lp = rotating_line(p);
-        // Calculate the ratio between the distance from the point to the rotating_line
-        // to the canvas width divided by 2.
-        let ratio = Math.min(1, 1 - lp.$subtract(p).magnitude() / (space.size.x / (2 * scaleFactor)));
-        // Color the lines perpendicular to the point and rotating_line
-        form.stroke(`rgba(200,200,200,${ratio}`, ratio * 2).line([p, lp]);
-        // Color the points on the canvas
-        form.fillOnly(["#F04", "#0F9", "#09F"][i % 3]).point(p, 1.2);
+        let distance = lp.$subtract(p).magnitude();
+        let ratio = Math.min(1, 1 - distance / halfScreenWidth);
+        let color = `rgba(200,200,200,${ratio}`;
+        
+        // Use the same stroke and fill color to reduce unnecessary calls
+        form.stroke(color, ratio * 2).line([p, lp]);
+        form.fillOnly(fillColors[i % 3]).point(p, 1.2);
       });
     },
-
+  
     resize: () => {
-      // If the screen is resized, reinitialize the points on the canvas
+      // Reinitialize points on resize
       pts = Create.distributeRandom(space.outerBound, num_points);
-      // Reinitialize the rotating_line
-      rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.rotating_lineFromPt);
     },
+    
   });
+  
 
   // Start the animation
   space.play();
