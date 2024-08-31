@@ -11787,27 +11787,32 @@ html {
   max-height: 100%;
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
   display: block;
-}
-
-@media (max-width: 991.98px) {
-  .img-responsive {
-      margin-left: auto;
-      margin-right: auto;
-      float: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .img-responsive {
-      float: right;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
 }
 
   .spy-image {
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 500px; /* Restrict max width to 500px */
+  max-height: 500px; /* Restrict max height to 500px */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+  @media (max-width: 768px) {
+  .spy-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* Ensure the image scales correctly */
+  }
+@media (max-width: 768px) {
+  .spy-image {
+    width: 100%;
+    height: auto; /* Ensure the image scales correctly */
+    max-width: 500px; /* Maintain the 500px max width */
+    max-height: 500px; /* Maintain the 500px max height */
+  }
 
 
 }
