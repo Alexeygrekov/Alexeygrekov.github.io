@@ -11780,4 +11780,17 @@ html {
   box-sizing: border-box;
 }
 
+@media (max-width: 991.98px) {
+  .img-responsive {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-responsive {
+      float: right;
+  }
+
 }
