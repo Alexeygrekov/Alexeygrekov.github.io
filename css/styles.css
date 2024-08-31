@@ -626,7 +626,6 @@ progress {
 }
 
 .container,
-.container-fluid,
 .container-xxl,
 .container-xl,
 .container-lg,
@@ -11739,10 +11738,12 @@ html {
     position: absolute;
     top: 72px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 72px); /* 1 Rem =16px so py-5 is 1 rem each side then content is 40px. We get 32 + 40 = 72 for header*/
     z-index: -1; /* Sends the canvas behind other content */
     display: block;
+    margin: 0;
+    padding: 0;
   }
   header {
     position: relative;
@@ -11767,5 +11768,11 @@ html {
   50% { background-color: transparent; }
   99% { background-color: transparent; }
   100%  { background-color: #ccc; }
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 }
