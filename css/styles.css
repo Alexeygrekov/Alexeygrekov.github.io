@@ -11803,5 +11803,11 @@ html {
   }
 }
 
+  .spy-image {
+    width: 100%;
+    max-width: 100%;
+}
+
+
 
 }
