@@ -7131,8 +7131,9 @@ textarea.form-control-lg {
 }
 
 .border {
-  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  border: var(--bs-border-width) var(--bs-border-style) transparent;
 }
+
 
 .border-0 {
   border: 0 !important;
