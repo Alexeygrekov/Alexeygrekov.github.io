@@ -1,7 +1,6 @@
 // Create the CanvasSpace and CanvasForm
 // Check if the element with id 'homepage-animation' exists before running Pts.js code
 if (document.getElementById('homepage-animation')) {
-  // Your existing Pts.js code goes here
   Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
   // Declare and initialize space
@@ -54,8 +53,30 @@ if (document.getElementById('homepage-animation')) {
     },
   
     resize: () => {
-      // Reinitialize points on resize
-      pts = Create.distributeRandom(space.outerBound, num_points);
+      let currentHeight = window.innerHeight - mobile_navbar_padding;
+      let currentWidth = window.innerWidth;
+      let heightDifference = Math.abs(currentHeight - bound.height);
+
+
+      // Update the width of the bound and adjust the number of points if the width changes
+      if (bound.width !== currentWidth) {
+        bound.width = currentWidth;
+        pts = Create.distributeRandom(space.outerBound, num_points);
+        space.resize(bound);
+      }
+
+      // Reinitialize if the height difference is significant (e.g., more than 50px)
+      if (heightDifference > 50) {
+        // Update the previous height to the new height
+        bound.height = currentHeight;
+
+        // Reinitialize the animation
+        pts = Create.distributeRandom(space.outerBound, num_points);
+        space.resize(bound);
+      } else {
+        // Update the previous height without reinitializing the animation
+        bound.height = currentHeight;
+      }
     },
 
   });
