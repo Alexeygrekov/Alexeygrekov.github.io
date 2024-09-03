@@ -5,6 +5,7 @@ if (document.getElementById('homepage-animation')) {
 
   // Declare and initialize space
   let space = window.space;
+  let form = space.getForm(); // Define the form
 
   // Resize enabled
   space.autoResize = true;
@@ -44,7 +45,7 @@ if (document.getElementById('homepage-animation')) {
         let lp = rotating_line(p);
         let distance = lp.$subtract(p).magnitude();
         let ratio = Math.min(1, 1 - distance / halfScreenWidth);
-        let color = `rgba(200,200,200,${ratio}`;
+        let color = `rgba(200,200,200,${ratio})`;
         
         // Use the same stroke and fill color to reduce unnecessary calls
         form.stroke(color, ratio * 2).line([p, lp]);
@@ -69,8 +70,6 @@ if (document.getElementById('homepage-animation')) {
       if (heightDifference > 50) {
         // Update the previous height to the new height
         bound.height = currentHeight;
-
-        // Reinitialize the animation
         pts = Create.distributeRandom(space.outerBound, num_points);
         space.resize(bound);
       } else {
