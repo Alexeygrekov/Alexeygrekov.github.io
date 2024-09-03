@@ -26,12 +26,8 @@ if (document.getElementById('homepage-animation')) {
       bound.height = window.innerHeight - mobile_navbar_padding;
       space.resize(bound);
       
-      
-      // Initialize points only if not already initialized
-      if (!pts.length) {
-        pts = Create.distributeRandom(space.outerBound, num_points);
-      }
-      // Initialize rotating line once
+      // Initialize points and rotating line once
+      pts = Create.distributeRandom(space.outerBound, num_points);
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
     },
   
@@ -59,9 +55,7 @@ if (document.getElementById('homepage-animation')) {
   
     resize: () => {
       // Reinitialize points on resize
-      if (newNumPoints !== pts.length) {
-        pts = Create.distributeRandom(space.outerBound, newNumPoints);
-      }
+      pts = Create.distributeRandom(space.outerBound, num_points);
     },
 
   });
