@@ -1,12 +1,10 @@
-// Create the CanvasSpace and CanvasForm
 // Check if the element with id 'homepage-animation' exists before running Pts.js code
 if (document.getElementById('homepage-animation')) {
-  // Your existing Pts.js code goes here
+  // Create the CanvasSpace and CanvasForm
   Pts.quickStart(document.getElementById("homepage-animation"), "#1a0000");
 
   // Declare and initialize space
   let space = window.space;
-  let form = space.getForm();
 
   // Resize enabled
   space.autoResize = true;
@@ -21,29 +19,21 @@ if (document.getElementById('homepage-animation')) {
   let rotating_point = new Pt();
   let rotating_line = new Group();
 
-  // Create an array to store the state of points
-  let storedPts = [];
-  let storedRotatingPoint = new Pt();
-  
   space.add({
     start: (bound) => {
       bound.width = window.innerWidth;
       bound.height = window.innerHeight - mobile_navbar_padding;
+      // Calls resize to draw the points
       space.resize(bound);
       
-      // If there are stored points
-      if (storedPts.length > 0) {
-        pts = new Group(...storedPts.map(p => new Pt(p)));
-        rotating_point = new Pt(storedRotatingPoint);
-      } else {
-        pts = Create.distributeRandom(space.outerBound, num_points);
-        rotating_point = new Pt(space.center.$subtract(0.1));
-      }
+      // Initialize points and rotating 
+      pts = Create.distributeRandom(space.outerBound, num_points);
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
     },
-  
+
+    //Loop to animate
     animate: () => {
-      // Rotate points and rotating line only if necessary
+      // Rotate points and rotating line 
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
       pts.rotate2D(0.0004, space.center);
       rotating_point.rotate2D(-0.0006, space.center);
@@ -51,7 +41,8 @@ if (document.getElementById('homepage-animation')) {
       const fillColors = ["#F04", "#0F9", "#09F"];
       const center = space.center;
       const halfScreenWidth = space.size.x / (2 * scaleFactor);
-  
+
+      //Perpendicular line is created to the rotating line
       pts.forEach((p, i) => {
         let lp = rotating_line(p);
         let distance = lp.$subtract(p).magnitude();
@@ -65,12 +56,10 @@ if (document.getElementById('homepage-animation')) {
     },
   
     resize: () => {
-      // Store the current state of the points
-      storedPts = pts.map(p => p.clone());
-      storedRotatingPoint = rotating_point.clone();
-      
-      // Resize the space to fit the new canvas size without re-initializing points
-      space.resize({width: window.innerWidth, height: window.innerHeight - mobile_navbar_padding});
+      // Reinitialize points on resize
+      pts = Create.distributeRandom(space.outerBound, num_points);
+      // Reinitialize the rotating_line
+      rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.rotating_lineFromPt);
     },
 
   });
