@@ -6,6 +6,7 @@ if (document.getElementById('homepage-animation')) {
 
   // Declare and initialize space
   let space = window.space;
+  let form = space.getForm();
 
   // Resize enabled
   space.autoResize = true;
