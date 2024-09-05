@@ -68,8 +68,8 @@ if (document.getElementById('homepage-animation')) {
       storedPts = pts.map(p => p.clone());
       storedRotatingPoint = rotating_point.clone();
       
-      // Re-initialize points from the stored state
-      pts = Create.distributeRandom(space.outerBound, num_points);
+      // Resize the space to fit the new canvas size without re-initializing points
+      space.resize({width: window.innerWidth, height: window.innerHeight - mobile_navbar_padding});
     },
 
   });
