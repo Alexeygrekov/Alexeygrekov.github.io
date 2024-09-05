@@ -20,14 +20,21 @@ if (document.getElementById('homepage-animation')) {
   let rotating_point = new Pt();
   let rotating_line = new Group();
 
+  // Create an array to store the state of points
+  let storedPts = [];
+
   space.add({
     start: (bound) => {
       bound.width = window.innerWidth;
       bound.height = window.innerHeight - mobile_navbar_padding;
       space.resize(bound);
       
-      // Initialize points and rotating line once
-      pts = Create.distributeRandom(space.outerBound, num_points);
+      // If there are stored points, restore them
+      if (storedPts.length > 0) {
+        pts = new Group(...storedPts);
+      } else {
+        pts = Create.distributeRandom(space.outerBound, num_points);
+      }
       rotating_line = new Group(space.center.$subtract(0.1), rotating_point).op(Line.perpendicularFromPt);
     },
   
@@ -54,7 +61,10 @@ if (document.getElementById('homepage-animation')) {
     },
   
     resize: () => {
-      // Reinitialize points on resize
+      // Store the current state of the points
+      storedPts = pts.map(p => p.clone());
+      
+      // Re-initialize points from the stored state
       pts = Create.distributeRandom(space.outerBound, num_points);
     },
 
