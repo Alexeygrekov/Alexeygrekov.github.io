@@ -1,3 +1,4 @@
+// Library ptsjs is from William Ngan at ptsjs.org
 // Check if the element with id 'homepage-animation' exists before running Pts.js code
 if (document.getElementById('homepage-animation')) {
   // Create the CanvasSpace and CanvasForm
